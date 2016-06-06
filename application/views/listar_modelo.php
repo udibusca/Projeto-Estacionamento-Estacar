@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-sm-12 col-xs-12">
                 <div class="page-title">
-                    <span class="title">Modelos de veiculos</span>
-                    <div class="description">Lista modelos cadastradas</div>
+                    <span class="title">Modelos de veículos/fabricante</span>
+                    <div class="description">Lista veículos/fabricante cadastradas</div>
                 </div>                            
                 <div class="card">
                     <div class="card-header">
@@ -20,18 +20,20 @@
                                 <table class="datatable table table-striped dataTable">
                                     <thead>
                                         <tr>
+                                            <th>Tipo</th>
+                                            <th>Modelo veículo</th>
                                             <th>Fabricante</th>
-                                            <th>Modelo</th>
                                             <th width="8%" >Ação</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($modelos as $mod) { ?>                                                       
+                                        <?php foreach ($carros as $mod) { ?>                                                       
                                             <tr>                                                        
-                                                <td><?= $mod->FABRICANTE; ?></td>
-                                                <td><?= $mod->MODELO; ?></td>
+                                                <td><?= $mod->tipo_carro; ?></td>
+                                                <td><?= $mod->nom_carro; ?></td>
+                                                <td><?= $mod->nom_fabricante; ?></td>
                                                 <td>
-                                                    <a href="<?= base_url('modelo/editar/' . $mod->CODIGO) ?>" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                                                    <a href="<?= base_url('modelo/editar/' . $mod->id_carro) ?>" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
                                                     <a href=""  class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modalDelete"><i class="fa fa-trash"></i></a>
                                                 </td>
                                             </tr>
@@ -58,7 +60,7 @@
                 <p>Tem certeza que deseja excluir ?</p>
             </div>
             <div class="modal-footer">
-                <a  href="<?= base_url('modelo/excluir/' . $mod->CODIGO) ?>" class="btn btn-default"  >Sim</a>
+                <a  href="<?= base_url('modelo/excluir/' . $mod->ID) ?>" class="btn btn-default"  >Sim</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
             </div>
         </div>

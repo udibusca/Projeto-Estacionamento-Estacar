@@ -12,7 +12,7 @@ class Modelo extends CI_Controller {
 
     public function index($indice = null) {
 
-        $dados['modelos'] = $this->model->listar();
+        $dados['carros'] = $this->model->listar();
        
 
         $this->load->view('includes/html_header');
@@ -62,16 +62,16 @@ class Modelo extends CI_Controller {
         }
     }
 
-    public function excluir($CODIGO = null) {
-        if ($this->model->deletar($CODIGO)) {
+    public function excluir($id = null) {
+        if ($this->model->deletar($id)) {
             redirect('modelo/3');
         } else {
             redirect('modelo/4');
         }
     }
 
-    public function editar($CODIGO=null) {
-        $data['modelos'] = $this->model->editar($CODIGO);
+    public function editar($id=null) {
+        $data['carros'] = $this->model->editar($id);
         
         $this->load->view('includes/html_header');
         $this->load->view('includes/html_menu');
@@ -81,7 +81,7 @@ class Modelo extends CI_Controller {
     
     public function atualiza(){
 
-        $data['CODIGO'] = $this->input->post('CODIGO');
+        $data['id'] = $this->input->post('id');
         $data['fabricante'] = $this->input->post('fabricante');
         $data['modelo'] = $this->input->post('modelo');
 

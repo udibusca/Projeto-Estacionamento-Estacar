@@ -76,7 +76,7 @@
                                             <li><a href="<?= base_url()?>cidade">Cidade</a></li>
                                         </ul>
                                         <ul class="nav navbar-nav">
-                                            <li><a href="<?= base_url()?>modelo">Modelo</a></li>
+                                            <li><a href="<?= base_url()?>modelo">Veículo/Fabricante</a></li>
                                         </ul>
                                         <ul class="nav navbar-nav">
                                             <li><a href="<?= base_url()?>usuario">Usuário</a></li>
