@@ -1,7 +1,7 @@
 <?php
-class Cidade_model extends CI_Model {
+class Cor_model extends CI_Model {
     
-    public static $tabela = 'tb_cidade';
+    public static $tabela = 'cor';
           
     function __construct() {
         parent::__construct();
@@ -14,19 +14,19 @@ class Cidade_model extends CI_Model {
         $query = $this->db->get(self::$tabela);
         return $query->result();
     }    
-    function deletar($COD_IBGE) {
-        $this->db->where('COD_IBGE', $COD_IBGE);
+    function deletar($id) {
+        $this->db->where('id', $id);
         return $this->db->delete(self::$tabela);
     }
 
-    function editar($COD_IBGE) {
-        $this->db->where('COD_IBGE', $COD_IBGE);
+    function editar($id) {
+        $this->db->where('id', $id);
         $query = $this->db->get(self::$tabela);
         return $query->result();
     }
 
     function atualizar($data) {
-        $this->db->where('COD_IBGE', $data['COD_IBGE']);
+        $this->db->where('id', $data['id']);
         $this->db->set($data);
         return $this->db->update(self::$tabela);
     }

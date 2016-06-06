@@ -54,6 +54,7 @@ $route['default_controller'] = 'dashboard';
 $route['cidade/(:num)'] = 'cidade/index/$1';
 $route['modelo/(:num)'] = 'modelo/index/$1';
 $route['usuario/(:num)'] = 'usuario/index/$1';
+$route['cor/(:num)'] = 'cor/index/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

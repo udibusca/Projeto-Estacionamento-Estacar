@@ -80,7 +80,10 @@
                                         </ul>
                                         <ul class="nav navbar-nav">
                                             <li><a href="<?= base_url()?>usuario">Usuário</a></li>
-                                        </ul>                                        
+                                        </ul>
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="<?= base_url()?>cor">Cor</a></li>
+                                        </ul>                                          
                                     </div>
                                 </div>
                             </li>

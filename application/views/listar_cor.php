@@ -3,16 +3,16 @@
         <div class="row">
             <div class="col-sm-12 col-xs-12">
                 <div class="page-title">
-                    <span class="title">Cidade</span>
-                    <div class="description">Lista cidades cadastradas</div>
+                    <span class="title">Cores</span>
+                    <div class="description">Lista cores cadastradas</div>
                 </div>                            
                 <div class="card">
                     <div class="card-header">
-                        <!--div class="pull-right">
+                        <div class="pull-right">
                             <div class="btn-group" role="group" aria-label="...">
-                                <a href="<?= base_url() ?>cidade/cadastro" class="btn btn-info"><i class="fa fa-plus"></i> Novo</a>
+                                <a href="<?= base_url() ?>cor/cadastro" class="btn btn-info"><i class="fa fa-plus"></i> Novo</a>
                             </div>
-                        </div-->
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -20,24 +20,18 @@
                                 <table class="datatable table table-striped dataTable">
                                     <thead>
                                         <tr>
-                                            <th>Código IBGE</th>
-                                            <th>Municipio</th>
-                                            <th>UF</th>
-                                            <th>Código NFE</th>
-                                            <!--th width="8%" >Ação</th-->
+                                            <th>Cor</th>
+                                            <th width="8%" >Ação</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($cidades as $cid) { ?>                                                       
-                                            <tr>
-                                                <td><?= $cid->COD_IBGE; ?></td>
-                                                <td><?= $cid->MUNICIPIO; ?></td>
-                                                <td><?= $cid->UF; ?></td>
-                                                <td><?= $cid->COD_NFE; ?></td>
-                                                <!--td>
-                                                    <a href="<?= base_url('cidade/editar/' . $cid->COD_IBGE) ?>" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                                        <?php foreach ($cor as $c) { ?>                                                       
+                                            <tr>                                                        
+                                                <td><?= $c->NOME; ?></td>
+                                                <td>
+                                                    <a href="<?= base_url('cor/editar/' . $c->ID) ?>" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
                                                     <a href=""  class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modalDelete"><i class="fa fa-trash"></i></a>
-                                                </td-->
+                                                </td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
@@ -62,7 +56,7 @@
                 <p>Tem certeza que deseja excluir ?</p>
             </div>
             <div class="modal-footer">
-                <a  href="<?= base_url('cidade/excluir/' . $cid->COD_IBGE) ?>" class="btn btn-default"  >Sim</a>
+                <a  href="<?= base_url('cor/excluir/' . $c->ID) ?>" class="btn btn-default"  >Sim</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
             </div>
         </div>
